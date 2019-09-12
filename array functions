@@ -1,0 +1,110 @@
+	//operations on array 
+//insertion
+//deletion
+//searching
+//sortion
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+	int a[50],n,search,insert,flag=0,del,choise,exi,loc;
+	
+	cout<<"\tOPERATIONS ON ARRAY\n ";
+	cout<<"ENTER THE SIZE OF ARRAY\n";
+	cin>>n;
+	do{
+	
+	cout<<"\nMENU\n1.INSERTION\n2.SHOW\n3.DELETION\n4.SEARCHING\n5.SORTING\n6.EXIT\n";
+	cin>>choise;
+		switch(choise)
+	{
+		case 1:for(int i=0;i<n;i++)
+				{
+					cout<<"ENTER ELEMENT "<<i+1<<" - ";
+					cin>>a[i];
+				}
+				cout<<"\nALL ELEMENTS ARE INSERTED IN ARRAY AS\n";
+				for(int  i=0;i<n;i++)
+				{
+					cout<<a[i]<<"\n";
+				}
+				break;
+		case 2: cout<<"ELEMENT IN ARRAY ARE\n";
+				for(int i=0;i<n;i++)
+				{
+					cout<<a[i]<<"\n";
+				}
+				break;
+		case 3: cout<<"ENTER ELEMENT YOU WANT TO DELETE\n";
+				cin>>del;
+				for(int i=0;i<n;i++)
+			    {
+					if(a[i]==del)
+					{
+						cout<<"ELEMENT DELETED FROM "<<i+1<< "LOCATION\n";
+					flag=1;
+					loc=i;
+					}
+					else{} 
+					if(flag==1)
+					{
+					
+                    if(i>loc)
+					{
+						a[i-1]=a[i];
+				    }
+				    else{}
+				    }
+				    else
+				    {}
+					
+			    }
+					cout<<"\nALL ELEMENTS  IN ARRAY ARE\n";
+				for(int i=0;i<n-1;i++)
+				{
+					cout<<a[i]<<"\n";
+				}	
+				break;
+		case 4: cout<<"ENTER THE ELEMENT YOU WANT TO SEARCH FOR\n";
+		        cin>>search;
+				for(int i=0;i<n;i++)
+				{
+					if(a[i]==search)
+					{
+						cout<<"ELEMENT FOUND AT "<<i+1;
+					}	
+				     else{}
+					 
+				     
+				}	
+				break;
+		case 5: 	 int j, fl=1;     
+		        	int temp;              
+      				for(int i = 0; (i <n) && fl; i++)
+     				{
+                    fl = 0;
+                    for (j=0; j<n; j++)
+         			{if (a[j+1] >a[j])      
+                    { 
+                       temp = a[j];            
+                       a[j] = a[j+1];
+                       a[j+1] = temp;
+                    fl = 1;               
+               			}}}
+							cout<<"\nALL ELEMENTS  IN ARRAY ARE\n";
+				for( int i=0;i<n;i++)
+				{
+					cout<<a[i]<<"\n";
+				}	
+					break;
+
+}
+cout<<"DO YOU WANT TO CONTINUT PREE 1 TO CONTINUE \n";
+exi=getch();
+}while(exi!=1);
+
+getch();
+return 0;
+}
